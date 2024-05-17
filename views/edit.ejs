@@ -1,0 +1,22 @@
+<%- include('partials/header.ejs') %>
+<div class="card container-fluid w-50 w-md-50 w-lg-50 mt-5 p-0">
+     <div class="card-header">
+          <h2>Edit</h2>
+     </div>
+     <div class="card-body">
+          <form action="/blog/<%= blog.id %>/edit" method="POST">
+               <div class="form-group">
+                    <label for="blog_title">Title</label>
+                    <input type="text" id="blog_title" name="blog_title" class="form-control" placeholder="Enter your blog title" value="<%= blog.title %>" required>
+               </div>
+               <div class="form-group mt-3 mb-5">
+                    <label for="blog_content">Content</label>
+                    <textarea type="text" id="blog_content" name="blog_content" class="form-control" placeholder="Enter your blog content" required><%= blog.content %></textarea>
+               </div>
+               <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Create</button>
+               </div>
+          </form>
+     </div>
+</div>
+<%- include('partials/footer.ejs') %>
